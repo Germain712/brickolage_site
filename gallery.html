@@ -1,44 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery — BRICK-O-LAGE Construction</title>
-  <meta name="description" content="Gallery of completed projects by BRICK-O-LAGE Construction in Dominica.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <header class="site-header" role="banner">
+
+  <header class="site-header">
     <div class="container nav-wrap">
-      <a class="logo" href="index.html">BRICK-O-LAGE<span class="sub"> Construction</span></a>
-      <nav aria-label="Main navigation">
-        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <a href="index.html" class="logo">
+        <img src="logo.svg" alt="Brick-O-Lage Logo" class="logo-img">
+      </a>
+
+      <nav>
+        <button id="nav-toggle" aria-expanded="false">Menu</button>
         <ul id="nav-list" class="nav-list">
           <li><a href="index.html">Home</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <section class="container gallery-section">
     <h1>Project Gallery</h1>
-    <p class="lead">A selection of finished projects and work-in-progress images.</p>
-    <div class="gallery-grid">
-      <figure><img src="images/bol-business-card-front.jpeg" alt="BRICK-O-LAGE business card front"><figcaption>Company branding / card</figcaption></figure>
-      <figure><img src="images/bol-business-card-back.jpeg" alt="BRICK-O-LAGE business card back"><figcaption>Contact details</figcaption></figure>
-      <figure><img src="images/placeholder-1.jpg" alt="Project placeholder"><figcaption>Sample project</figcaption></figure>
-      <figure><img src="images/placeholder-2.jpg" alt="Project placeholder 2"><figcaption>Sample project</figcaption></figure>
-    </div>
-  </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>© 2025 BRICK-O-LAGE Construction — Dominica</p>
+    <!-- FILTERS -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="renovation">Renovation</button>
+      <button class="filter-btn" data-filter="construction">Construction</button>
+      <button class="filter-btn" data-filter="design">Design</button>
     </div>
+
+    <!-- GALLERY GRID -->
+    <div class="gallery-grid">
+
+      <!-- Example images — replace with yours -->
+      <div class="gallery-item" data-category="renovation">
+        <img src="images/sample1.jpg" alt="Renovation project">
+      </div>
+
+      <div class="gallery-item" data-category="construction">
+        <img src="images/sample2.jpg" alt="Construction project">
+      </div>
+
+      <div class="gallery-item" data-category="design">
+        <img src="images/sample3.jpg" alt="Interior design">
+      </div>
+
+      <div class="gallery-item" data-category="renovation">
+        <img src="images/sample4.jpg" alt="Renovation">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <footer class="site-footer">
+    © 2025 BRICK-O-LAGE Construction. All Rights Reserved.
   </footer>
 
+  <script src="script.js"></script>
 </body>
+
 </html>

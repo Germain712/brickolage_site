@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">BRICK-O-LAGE Construction</title>
+  <desc id="logoDesc">BRICK-O-LAGE Construction logo with bold wordmark and gradient line</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#7b3fa1"/>
+      <stop offset="100%" stop-color="#3973d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="80" rx="8" fill="none"/>
+  <text x="18" y="36" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="20" fill="#ffffff">BRICK-O-LAGE</text>
+  <text x="18" y="57" font-family="Montserrat, Arial, sans-serif" font-weight="300" font-size="12" fill="#ffffff">Construction</text>
+  <rect x="190" y="32" width="92" height="6" rx="3" fill="url(#g1)"/>
+</svg>

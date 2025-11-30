@@ -1,80 +1,335 @@
-:root{
-  --bg:#0f0f10;
-  --panel:#151515;
-  --accent1:#7b3fa1;
-  --accent2:#3973d6;
-  --text:#ffffff;
-  --muted:#cfcfcf;
-  --max-width:1100px;
+/* ================================
+   BRICK-O-LAGE — Global Styles
+   ================================ */
+
+:root {
+  --bg: #0f0f10;
+  --panel: #151515;
+  --accent1: #7b3fa1;
+  --accent2: #3973d6;
+  --text: #ffffff;
+  --muted: #cfcfcf;
+  --max-width: 1100px;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: 'Montserrat', sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
+* {
+  box-sizing: border-box;
 }
 
-.container{
-  width:90%;
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:1rem 0;
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-/* header */
-.site-header{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border-bottom:1px solid rgba(255,255,255,0.03)}
-.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-.logo{color:var(--text);text-decoration:none;font-weight:700;letter-spacing:2px}
-.logo .sub{font-weight:300;display:block;font-size:0.8rem;opacity:0.9}
+/* ================================
+   Layout Utilities
+   ================================ */
 
-/* navigation */
-#nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:0.4rem 0.6rem;border-radius:6px}
-.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
-.nav-list a{color:var(--text);text-decoration:none;font-weight:600}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center;position:relative;overflow:hidden;padding:2rem 0}
-.hero-inner{z-index:2}
-.hero-decor{position:absolute;right:-10%;top:0;bottom:0;width:55%;background:linear-gradient(135deg,var(--accent1),var(--accent2));opacity:0.12;transform:skewX(-18deg);}
-
-/* headings */
-h1{font-size:1.8rem;margin:0 0 0.5rem}
-.lead{color:var(--muted);max-width:60ch}
-
-/* buttons */
-.btn{display:inline-block;padding:0.8rem 1.2rem;border-radius:8px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:var(--text);text-decoration:none;font-weight:600}
-
-/* sections */
-.services, .about, .cta{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.02)}
-.services ul{list-style:disc;margin-left:1.4rem;color:var(--muted)}
-
-/* gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.gallery-grid img{width:100%;height:200px;object-fit:cover;border-radius:8px}
-
-/* form */
-.contact-form{display:flex;flex-direction:column;gap:0.8rem;max-width:600px}
-.contact-form input,.contact-form textarea{padding:0.8rem;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--text)}
-
-/* footer */
-.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1rem 0;margin-top:2rem;color:var(--muted);font-size:0.95rem;text-align:center}
-
-/* responsive */
-@media (min-width:800px){
-  .hero{grid-template-columns:1fr 420px;padding:3.5rem 0}
-  h1{font-size:2.4rem}
-  #nav-toggle{display:none}
-  .nav-list{display:flex}
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 0;
 }
 
-@media (max-width:799px){
-  #nav-toggle{display:inline-block}
-  .nav-list{display:none}
-  .nav-list.open{display:flex;flex-direction:column;background:transparent;padding:1rem;position:absolute;right:1rem;top:64px;border-radius:8px}
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* ================================
+   Header + Navigation
+   ================================ */
+
+.site-header {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(0, 0, 0, 0.03)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.45rem 0.7rem;
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.nav-list a:hover {
+  opacity: 0.7;
+}
+
+/* ---- Mobile nav ---- */
+@media (max-width: 768px) {
+  #nav-toggle {
+    display: inline-block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 1rem;
+    top: 70px;
+    background: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 180px;
+    z-index: 999;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+}
+
+/* ================================
+   Hero
+   ================================ */
+
+.hero {
+  padding: 3rem 0 2.5rem;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* ================================
+   Buttons
+   ================================ */
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.85rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ================================
+   Services Section
+   ================================ */
+
+.services {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.services li {
+  padding: 0.4rem 0;
+  font-weight: 500;
+}
+
+/* ================================
+   Gallery — Filters
+   ================================ */
+
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s, opacity 0.2s;
+}
+
+.filter-btn:hover {
+  opacity: 0.85;
+}
+
+.filter-btn.active {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+
+/* ================================
+   Gallery Grid
+   ================================ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.25s, opacity 0.2s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.gallery-grid figcaption {
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ================================
+   Lightbox
+   ================================ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 10000;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================================
+   Contact Form
+   ================================ */
+
+.contact-form {
+  background: #151515;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0f0f10;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--accent2);
+}
+
+/* ================================
+   Footer
+   ================================ */
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.site-footer a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  opacity: 0.75;
 }

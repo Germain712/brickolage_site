@@ -1,19 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>BRICK-O-LAGE Construction — Dominica</title>
-  <meta name="description" content="BRICK-O-LAGE Construction — reliable building, renovation and masonry services across Dominica.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRICK-O-LAGE Construction</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <header class="site-header" role="banner">
+
+  <header class="site-header">
     <div class="container nav-wrap">
-      <a class="logo" href="index.html">BRICK-O-LAGE<span class="sub"> Construction</span></a>
-      <nav aria-label="Main navigation">
-        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <a href="index.html" class="logo">
+        <img src="logo.svg" alt="Brick-O-Lage Logo" class="logo-img">
+      </a>
+
+      <nav>
+        <button id="nav-toggle" aria-expanded="false">Menu</button>
         <ul id="nav-list" class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -23,52 +27,20 @@
     </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-inner">
-        <h1 id="hero-heading">Building with precision. Crafted with trust.</h1>
-        <p class="lead">High-quality construction, renovation and masonry services across the Caribbean island of Dominica.</p>
-        <p><a class="btn" href="contact.html">Get a Quote</a></p>
-      </div>
-      <div class="hero-decor" aria-hidden="true"></div>
-    </section>
+  <section class="hero container">
+    <h1>Building with Precision. Crafting with Vision.</h1>
+    <p class="lead">
+      BRICK-O-LAGE Construction provides high-quality building and renovation services with a dedication to
+      craftsmanship, reliability, and modern design.
+    </p>
+    <a href="contact.html" class="btn">Request a Quote</a>
+  </section>
 
-    <section class="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Our Services</h2>
-      <ul>
-        <li>Residential Construction</li>
-        <li>Commercial Projects</li>
-        <li>Renovation &amp; Remodeling</li>
-        <li>Masonry, Carpentry & Roofing</li>
-      </ul>
-    </section>
-
-    <section class="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Aldin &amp; BRICK-O-LAGE</h2>
-      <p>Managed by Mr. Aldin Pierre, BRICK-O-LAGE Construction delivers dependable workmanship, clear communication, and affordable pricing. Based in St. Joseph, Dominica — serving clients throughout the island.</p>
-    </section>
-
-    <section class="cta" aria-labelledby="cta-heading">
-      <h2 id="cta-heading">Ready to start your project?</h2>
-      <a class="btn btn-cta" href="contact.html">Contact Aldin</a>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>Contact: <a href="mailto:aldinpierre33@gmail.com">aldinpierre33@gmail.com</a> • Phone: <a href="tel:+17673161119">+1 767 316 1119</a></p>
-      <p>© 2025 BRICK-O-LAGE Construction — Dominica</p>
-    </div>
+  <footer class="site-footer">
+    © 2025 BRICK-O-LAGE Construction. All Rights Reserved.
   </footer>
 
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navList = document.getElementById('nav-list');
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-      navToggle.setAttribute('aria-expanded', !expanded);
-      navList.classList.toggle('open');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
