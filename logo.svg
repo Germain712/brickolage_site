@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="logoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7b3fa1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3973d6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#logoBg)" opacity="0.15" stroke="url(#logoBg)" stroke-width="2"/>
+  <!-- Brick pattern (simplified) -->
+  <g fill="url(#logoBg)">
+    <!-- Top left brick -->
+    <rect x="40" y="50" width="35" height="20" rx="2"/>
+    <!-- Top right brick -->
+    <rect x="85" y="50" width="35" height="20" rx="2"/>
+    <!-- Middle left brick -->
+    <rect x="52" y="80" width="35" height="20" rx="2"/>
+    <!-- Middle right brick -->
+    <rect x="98" y="80" width="35" height="20" rx="2"/>
+    <!-- Bottom brick -->
+    <rect x="70" y="110" width="35" height="20" rx="2"/>
+  </g>
+  <!-- Text label -->
+  <text x="100" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif">BRICK-O-LAGE</text>
+</svg>
