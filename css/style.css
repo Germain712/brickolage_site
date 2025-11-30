@@ -69,6 +69,34 @@ body {
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
 }
+.nav-wrap nav,
+nav {
+  position: relative;
+}
+/* visual state for the menu toggle when open */
+#nav-toggle[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+/* transitions and touch-friendly link styling */
+.nav-list,
+.nav-list.open {
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.nav-list a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  background: rgba(255, 255, 255, 0.04);
+  outline: none;
+}
+.nav-list a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(57, 115, 214, 0.12);
+}
 .nav-list {
   list-style: none;
   margin: 0;
@@ -206,11 +234,30 @@ h1 {
   .nav-list.open {
     display: flex;
     flex-direction: column;
-    background: transparent;
-    padding: 1rem;
+    background: rgba(21, 21, 21, 0.92);
+    padding: 0.5rem;
     position: absolute;
     right: 1rem;
-    top: 64px;
+    top: calc(100% + 0.5rem);
     border-radius: 8px;
+    min-width: 160px;
+    gap: 0.25rem;
+    z-index: 1200;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .nav-list.open a {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+  }
+}
+
+/* On very small screens make the dropdown use the available width neatly */
+@media (max-width: 420px) {
+  .nav-list.open {
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: auto;
+    padding: 0.25rem;
   }
 }
