@@ -49,6 +49,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -66,7 +67,7 @@ body {
   padding: 1rem 0;
 }
 
-/* header */
+/* HEADER */
 .site-header {
   background: linear-gradient(
     180deg,
@@ -75,18 +76,21 @@ body {
   );
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
+
 .nav-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
 }
+
 .logo {
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 2px;
 }
+
 .logo .sub {
   font-weight: 300;
   display: block;
@@ -94,7 +98,7 @@ body {
   opacity: 0.9;
 }
 
-/* navigation */
+/* NAVIGATION */
 #nav-toggle {
   display: none;
   background: none;
@@ -103,11 +107,7 @@ body {
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
 }
-.nav-wrap nav,
-nav {
-  position: relative;
-}
-/* visual state for the menu toggle when open */
+
 #nav-toggle[aria-expanded="true"] {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.12);
@@ -115,27 +115,13 @@ nav {
   transform: translateY(-1px);
 }
 
-/* transitions and touch-friendly link styling */
 .nav-list,
 .nav-list.open {
   transition:
     opacity 180ms ease,
     transform 180ms ease;
 }
-.nav-list a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition:
-    background 150ms ease,
-    color 150ms ease;
-}
-.nav-list a:hover,
-.nav-list a:focus {
-  background: rgba(255, 255, 255, 0.04);
-  outline: none;
-}
-.nav-list a:focus-visible {
-  box-shadow: 0 0 0 3px rgba(57, 115, 214, 0.12);
-}
+
 .nav-list {
   list-style: none;
   margin: 0;
@@ -143,13 +129,28 @@ nav {
   display: flex;
   gap: 1rem;
 }
+
 .nav-list a {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition:
+    background 150ms ease,
+    color 150ms ease;
 }
 
-/* hero */
+.nav-list a:hover,
+.nav-list a:focus {
+  background: rgba(255, 255, 255, 0.04);
+  outline: none;
+}
+
+.nav-list a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(57, 115, 214, 0.12);
+}
+
+/* HERO */
 .hero {
   display: grid;
   grid-template-columns: 1fr;
@@ -160,9 +161,11 @@ nav {
   padding: 2rem 0;
   animation: fadeIn 600ms ease-out;
 }
+
 .hero-inner {
   z-index: 2;
 }
+
 .hero-decor {
   position: absolute;
   right: -10%;
@@ -175,30 +178,40 @@ nav {
   animation: fadeIn 800ms ease-out 200ms backwards;
 }
 
-/* MOBILE MENU FIX */
-@media (max-width: 768px) {
+/* ------------------------------------------
+   MOBILE NAVIGATION — FINAL VERSION
+   ------------------------------------------ */
+@media (max-width: 800px) {
   #nav-toggle {
     display: block;
     z-index: 9999;
   }
 
+  /* Hide menu by default */
   .nav-list {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 80vw; /* Responsive width so it never overflows */
-    max-width: 300px; /* Optional: keeps it neat on tablets */
-    background: #111; /* Match your site theme */
-    flex-direction: column; /* Stack links vertically */
+    width: 80vw;
+    max-width: 320px;
+    background: #111;
+    flex-direction: column;
     gap: 2rem;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    z-index: 9000;
   }
 
+  /* Show when open */
   .nav-list.open {
+    display: flex;
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
@@ -207,19 +220,47 @@ nav {
   body.menu-open {
     overflow-x: hidden;
   }
+
+  .nav-list li a {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+  }
 }
 
-/* headings */
+/* DESKTOP NAV */
+@media (min-width: 801px) {
+  #nav-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
+  }
+}
+
+/* HEADINGS */
 h1 {
   font-size: 1.8rem;
   margin: 0 0 0.5rem;
 }
+
 .lead {
   color: var(--muted);
   max-width: 60ch;
 }
 
-/* buttons */
+/* BUTTONS */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.2rem;
@@ -232,30 +273,33 @@ h1 {
     transform 200ms ease,
     box-shadow 200ms ease;
 }
+
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(123, 63, 161, 0.3);
 }
 
-/* sections */
+/* SECTIONS */
 .services,
 .about,
 .cta {
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
+
 .services ul {
   list-style: disc;
   margin-left: 1.4rem;
   color: var(--muted);
 }
 
-/* gallery */
+/* GALLERY */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
+
 .gallery-grid img {
   width: 100%;
   height: 200px;
@@ -270,22 +314,25 @@ h1 {
     transform 300ms ease,
     box-shadow 300ms ease;
 }
+
 .gallery-grid img:hover {
   transform: scale(1.05) translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 }
+
 .gallery-grid figure {
   margin: 0;
   animation: fadeIn 500ms ease-out;
 }
 
-/* form */
+/* FORM */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   max-width: 600px;
 }
+
 .contact-form input,
 .contact-form textarea {
   padding: 0.8rem;
@@ -297,6 +344,7 @@ h1 {
     border-color 200ms ease,
     background 200ms ease;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
@@ -304,7 +352,7 @@ h1 {
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* footer */
+/* FOOTER */
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   padding: 1rem 0;
@@ -314,7 +362,7 @@ h1 {
   text-align: center;
 }
 
-/* responsive */
+/* RESPONSIVE HERO */
 @media (min-width: 800px) {
   .hero {
     grid-template-columns: 1fr 420px;
@@ -322,50 +370,5 @@ h1 {
   }
   h1 {
     font-size: 2.4rem;
-  }
-  #nav-toggle {
-    display: none;
-  }
-  .nav-list {
-    display: flex;
-  }
-}
-
-@media (max-width: 799px) {
-  #nav-toggle {
-    display: inline-block;
-  }
-  .nav-list {
-    display: none;
-  }
-  .nav-list.open {
-    display: flex;
-    flex-direction: column;
-    background: rgba(21, 21, 21, 0.92);
-    padding: 0.5rem;
-    position: absolute;
-    right: 1rem;
-    top: calc(100% + 0.5rem);
-    border-radius: 8px;
-    min-width: 160px;
-    gap: 0.25rem;
-    z-index: 1200;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    animation: slideDown 250ms ease-out;
-  }
-  .nav-list.open a {
-    display: block;
-    padding: 0.6rem 0.9rem;
-    border-radius: 6px;
-  }
-}
-
-/* On very small screens make the dropdown use the available width neatly */
-@media (max-width: 420px) {
-  .nav-list.open {
-    left: 0.5rem;
-    right: 0.5rem;
-    min-width: auto;
-    padding: 0.25rem;
   }
 }
