@@ -8,6 +8,14 @@
       name="description"
       content="Contact Aldin at BRICK-O-LAGE Construction for quotes and enquiries."
     />
+    <meta property="og:title" content="Contact — BRICK-O-LAGE Construction" />
+    <meta
+      property="og:description"
+      content="Get in touch for reliable construction services in Dominica."
+    />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://brickolage.com/contact.html" />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
@@ -35,7 +43,7 @@
           <ul id="nav-list" class="nav-list" aria-hidden="true">
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -71,19 +79,59 @@
         <h2>Direct contact</h2>
         <p>
           Email:
-          <a href="mailto:germain718@outlook.com">germain718@outlook.com</a>
+          <a href="mailto:aldinpierre33@gmail.com">aldinpierre33@gmail.com</a>
         </p>
-        <p>Phone: <a href="tel:+447986852256">+44 7986852256</a></p>
+        <p>Phone: <a href="tel:+17673161119">+1 767 316 1119</a></p>
         <p>Location: Hillsborough garden, St. Joseph, Dominica</p>
+        <p>
+          <em
+            >For urgent inquiries, call directly or email backup:
+            info@brickolage.dm</em
+          >
+        </p>
       </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
       <div class="container">
+        <p>
+          Contact:
+          <a href="mailto:aldinpierre33@gmail.com">aldinpierre33@gmail.com</a> •
+          Phone: <a href="tel:+17673161119">+1 767 316 1119</a>
+        </p>
         <p>© 2025 BRICK-O-LAGE Construction — Dominica</p>
       </div>
     </footer>
 
     <script src="js/menu.js" defer></script>
+    <script>
+      document
+        .querySelector(".contact-form")
+        .addEventListener("submit", function (e) {
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+          if (!name || !email || !message) {
+            alert("Please fill in all required fields.");
+            e.preventDefault();
+          } else if (!/\S+@\S+\.\S+/.test(email)) {
+            alert("Please enter a valid email address.");
+            e.preventDefault();
+          }
+        });
+    </script>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_MEASUREMENT_ID");
+    </script>
   </body>
 </html>

@@ -8,6 +8,14 @@
       name="description"
       content="Gallery of completed projects by BRICK-O-LAGE Construction in Dominica."
     />
+    <meta property="og:title" content="Gallery — BRICK-O-LAGE Construction" />
+    <meta
+      property="og:description"
+      content="View our portfolio of construction and masonry projects across Dominica."
+    />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://brickolage.com/gallery.html" />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
@@ -34,7 +42,7 @@
           </button>
           <ul id="nav-list" class="nav-list" aria-hidden="true">
             <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -50,51 +58,58 @@
         <figure>
           <img
             src="images/bol-business-card-front.jpeg"
-            alt="BRICK-O-LAGE business card front"
+            alt="BRICK-O-LAGE business card front design"
+            loading="lazy"
           />
           <figcaption>Company branding / card</figcaption>
         </figure>
         <figure>
           <img
             src="images/bol-business-card-back.jpeg"
-            alt="BRICK-O-LAGE business card back"
+            alt="BRICK-O-LAGE business card back with contact details"
+            loading="lazy"
           />
           <figcaption>Contact details</figcaption>
         </figure>
         <figure>
           <img
             src="images/WhatsApp Image 2026-05-14 at 15.12.27.jpeg"
-            alt="Project placeholder"
+            alt="Completed residential construction project showcasing brickwork and masonry"
+            loading="lazy"
           />
-          <figcaption>Sample project</figcaption>
+          <figcaption>Residential construction project</figcaption>
         </figure>
         <figure>
           <img
             src="images/WhatsApp Image 2026-05-14 at 15.12.28 (11).jpeg"
-            alt="Project placeholder 2"
+            alt="Ongoing commercial building renovation with structural work"
+            loading="lazy"
           />
-          <figcaption>Sample project</figcaption>
+          <figcaption>Commercial renovation in progress</figcaption>
         </figure>
         <figure>
           <img
             src="images/WhatsApp Image 2026-05-14 at 15.12.28 (12).jpeg"
-            alt="Project placeholder 2"
+            alt="Finished masonry wall installation in a Dominica property"
+            loading="lazy"
           />
-          <figcaption>Sample project</figcaption>
+          <figcaption>Masonry wall construction</figcaption>
         </figure>
         <figure>
           <img
             src="images/WhatsApp Image 2026-05-14 at 15.12.28 (3).jpeg"
-            alt="Project placeholder 2"
+            alt="Roofing and carpentry work on a Caribbean home"
+            loading="lazy"
           />
-          <figcaption>Sample project</figcaption>
+          <figcaption>Roofing and carpentry services</figcaption>
         </figure>
         <figure>
           <img
             src="images/WhatsApp Image 2026-05-14 at 15.12.28 (5).jpeg"
-            alt="Project placeholder 2"
+            alt="Example of remodeling project with before and after elements"
+            loading="lazy"
           />
-          <figcaption>Sample project</figcaption>
+          <figcaption>Remodeling project example</figcaption>
         </figure>
         <figure>
           <img
@@ -120,5 +135,18 @@
     </footer>
 
     <script src="js/menu.js" defer></script>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_MEASUREMENT_ID");
+    </script>
   </body>
 </html>

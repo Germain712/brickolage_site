@@ -140,6 +140,11 @@ body {
     color 150ms ease;
 }
 
+.nav-list a.active {
+  font-weight: 700;
+  color: var(--accent1);
+}
+
 .nav-list a:hover,
 .nav-list a:focus {
   background: rgba(255, 255, 255, 0.04);
@@ -282,6 +287,7 @@ h1 {
 /* SECTIONS */
 .services,
 .about,
+.testimonials,
 .cta {
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
@@ -290,6 +296,21 @@ h1 {
 .services ul {
   list-style: disc;
   margin-left: 1.4rem;
+  color: var(--muted);
+}
+
+.testimonials blockquote {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid var(--accent1);
+  border-radius: 4px;
+}
+
+.testimonials cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
   color: var(--muted);
 }
 
